@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Tic Tac Toe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="app-container glass-panel">
+    <!-- LOGIN SECTION -->
+    <section id="login-section" class="active">
+      <h1>Tic Tac Toe</h1>
+      <p class="subtitle">Enter a username to start</p>
+      <div class="input-group">
+        <input type="text" id="username-input" placeholder="Username" maxlength="15" autocomplete="off">
+        <button id="login-btn" class="btn primary-btn">Continue</button>
+      </div>
+    </section>
+
+    <!-- LOBBY SECTION -->
+    <section id="lobby-section">
+      <div class="header">
+        <h1>Lobby</h1>
+        <span id="player-greeting"></span>
+      </div>
+      
+      <div class="lobby-content">
+        <div class="room-actions">
+          <div class="card">
+            <h3>Create a Game</h3>
+            <button id="create-room-btn" class="btn primary-btn">Create Room</button>
+          </div>
+          <div class="card">
+            <h3>Join a Game</h3>
+            <div class="input-group">
+              <input type="text" id="room-code-input" placeholder="Room Code" maxlength="6" autocomplete="off">
+              <button id="join-room-btn" class="btn secondary-btn">Join</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="leaderboard card">
+          <h3>Top Players</h3>
+          <ul id="leaderboard-list">
+            <!-- Leaderboard items go here -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME SECTION -->
+    <section id="game-section">
+      <div class="game-header">
+        <div class="room-info">Room: <span id="room-id-display"></span></div>
+        <button id="leave-room-btn" class="btn small-btn">Leave</button>
+      </div>
+      
+      <div class="game-content">
+        <div class="board-area">
+          <h2 id="turn-indicator">Waiting for opponent...</h2>
+          <div class="board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+          </div>
+          <div id="game-over-message" class="hidden">
+            <h3 id="winner-text"></h3>
+            <button id="play-again-btn" class="btn primary-btn" style="display:none;">Play Again</button>
+          </div>
+        </div>
+
+        <div class="chat-area card">
+          <div class="chat-messages" id="chat-messages">
+            <!-- Chat messages go here -->
+          </div>
+          <div class="chat-input-group">
+            <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+            <button id="send-chat-btn" class="btn primary-btn">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
