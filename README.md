@@ -1,11 +1,8 @@
-🎮 Multiplayer Tic Tac Toe :
-A real-time multiplayer Tic Tac Toe game where two players can join the same room and play instantly.
-🚀 Features
-Real-time gameplay using Socket.IO
-Room-based multiplayer
-Win/draw detection
-Restart game
-🛠️ Tech Stack
-Frontend: HTML, CSS, JS
-Backend: Node.js, Express
-Realtime: Socket.IO
+# 🎮 Multiplayer Tic Tac Toe
+
+A real-time, room-based multiplayer Tic Tac Toe game built with **Node.js, Express, and Socket.IO**.
+
+**Features:**
+- Real-time gameplay & room creation
+- Win/draw detection & game restart
+Under Progress...
